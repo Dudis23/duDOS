@@ -92,6 +92,8 @@ else:
             print("echo: repete uma palavra determinadas vezes")
             print("even: verifica se o número é par ou ímpar")
             print("guess: adivinhe um número com 5 chances")
+            print("used:diz quanto de memoria é usada no sistema")
+            print("word: criador de texto basico que salva na memoria")
 
 
         elif (comando == 'about'):
@@ -140,6 +142,25 @@ else:
             random_number = random.randint(1, 1000)
             print(f"seu número é {random_number}")
 
+
+        elif (comando == 'plus'):
+
+            somatória = int(input('digite um numero entre 1 a 100 para ver a somatoria'))
+
+
+            for i in range(1, 101):
+                resultado_somatoria = somatória + i
+
+                print(f"{somatória} + {i} = {resultado_somatoria}")
+
+        elif (comando == 'pluss'):
+
+            soma = 1
+            for numero in range(2, 101):
+                soma += numero
+            print(soma)
+
+
         # tabuada
 
         elif (comando == 'mult'):
@@ -161,6 +182,19 @@ else:
             running = 0
             break
 
+        elif (comando == 'step'):
+            contador = 0
+            while contador < 50:
+
+                contador2 = contador
+                if contador / 7 == 1:
+                    print('Ei, números 7 ou divisórios não pode!')
+                    break
+                else:
+                    print(contador)
+                    contador += 2
+
+
         # trocar a mensagem de desligamento
 
         elif (comando == 'msgd'):
@@ -171,7 +205,7 @@ else:
         elif (comando == 'even'):
             par = float(input("digite um numero para ver se é par ou ímpar"))
 
-            if par % 3:
+            if par % 2 == 0:
                 print("esse número é par")
             else:
                 print("esse número é ímpar")
@@ -202,12 +236,12 @@ else:
             else:
                 print("você acertou!!!")
 
-        elif (comando == 'cdown'):
+        elif (comando == 'count'):
             historico.append(comando)
             contagem = float(input("digite um número"))
-            while contagem > -1:
+            while contagem < 11:
                 print(round(contagem))
-                contagem -= 1
+                contagem += 1
 
 
             else:
@@ -283,6 +317,7 @@ else:
                         writting = 0
                         break
 
+
                     else:
                         print(f"comando não reconhecido {modo}")
 
@@ -291,10 +326,22 @@ else:
 
 
 
+        elif (comando == 'just'):
 
+            respostas2 = float(input("fale um número"))
 
+            tentativas_guess = 0
 
+            while respostas2 != 10:
+                if tentativas_guess == 5:
+                    break
+                if 10 > respostas2:
+                    print("tente um número maior")
+                    respostas = float(input("chute um número"))
+                    tentativas_guess += 1
 
+                else:
+                    print('você acertou!!!!!')
 
 
 
@@ -306,5 +353,6 @@ else:
     else:
         print("tentativas execedida")
         print(f"{mensagem_de_desligamento}...")
+
 
 
